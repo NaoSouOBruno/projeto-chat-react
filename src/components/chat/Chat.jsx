@@ -1,56 +1,97 @@
+import { useState } from 'react'
+import { useLocation, Navigate } from 'react-router-dom'
 import './Chat.css'
 
 export function Chat() {
 
+    const location = useLocation();
+    const nome = location.state?.nome;
+
+    if (!nome) { // retorna ao index ao tentar acessar pela url
+        return <Navigate to="/" replace />;
+    }
+
+    const [mensagens, setMensagens] = useState([]);
+    const [input, setInput] = useState('');
+
+    function enviarMensagem(e) { 
+        e.preventDefault();
+
+        if (input === '') {
+            return
+        };
+
+        setMensagens([...mensagens, input]);
+        setInput('');
+    }
+
   return (
     <>
-      <main class="main">
-        <div id="app" class="app">
+      <main className="main">
+        <div id="app" className="app">
 
-        <header class="cabecalho">
-            <div class="icone">
-                <img class="foto" src="https://i.pinimg.com/736x/44/3d/a5/443da5b996e0017ae61c69b4bd5454bf.jpg"/>
+        <header className="cabecalho">
+            <div className="icone">
+                <img className="foto" src="https://i.pinimg.com/736x/44/3d/a5/443da5b996e0017ae61c69b4bd5454bf.jpg"/>
             </div>
 
-            <p class="nome">
+            <p className="nome">
                 Pedro Pascal
             </p>
         </header>
 
-        <div id="chat" class="chat">
-            <div class="mensagemAtendente">
-                hello my big fan from brazil! 😍
+        <div id="chat" className="chat">
+            <div className="mensagemAtendente">
+                hello {nome}, my big fan from brazil! 😍
             </div>
 
-            <div class="mensagemUser">
+            <div className="mensagemUser">
                 😱 pedro pascal famosíssimo ator internacional eu sou seu maior fã!
             </div>
 
-            <div class="mensagemAtendente">
+            <div className="mensagemAtendente">
                 sorry i dont speak portuguese
             </div>
 
-            <div class="mensagemUser">
+            <div className="mensagemUser">
                 💀
             </div>
 
-            <div class="mensagemAtendente">
+            <div className="mensagemAtendente">
                 💀
             </div>
 
-            <div class="mensagemUser">
-            </div>  
+            {mensagens.map((mensagem) => (
+                <div className="mensagemUser">
+                    {mensagem}
+                </div> 
+            ))}
+            
             
         </div>
 
-        <footer class="rodape">
-            <form id="formMensagem" class="mt-4">
-              <div class="campoMensagem">
-                <input id="textoMensagem"name="mensagem" type="text" class="inputMensagem" placeholder="Digite sua mensagem..."/>
+        <footer className="rodape">
+            <form 
+                id="formMensagem"
+                className="mt-4" 
+                onSubmit={enviarMensagem}
+            >
+
+              <div className="campoMensagem">
+                <input
+                    id="textoMensagem"
+                    name="mensagem"
+                    type="text"
+                    className="inputMensagem"
+                    placeholder="Digite sua mensagem..."
+                    value={input}
+                    onChange={e => setInput(e.target.value)}
+                />
               </div>
-              <div class="botaoEnviar">
-                <button type="submit" class="inputEnviar"></button>
-                <img class="imgEnviar" src="https://icons.veryicon.com/png/o/miscellaneous/utility/send-26.png" alt="Enviar"/>
+              
+              <div className="botaoEnviar">
+                <button type="submit" className="inputEnviar"></button>
+                <img className="imgEnviar" src="https://icons.veryicon.com/png/o/miscellaneous/utility/send-26.png" alt="Enviar"/>
               </div>
             </form>
         </footer>

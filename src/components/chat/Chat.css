@@ -1,0 +1,188 @@
+main {
+    background: #F7EBEC;
+    font-family:"Tahoma";
+}
+
+.app {
+    background: #001514;
+    border-radius: 5vh;
+
+    width: 30%;
+    min-width: 410px;
+    height: 90%;
+
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* Centralizei uma div!! */    
+
+    overflow: hidden;
+}
+
+.chat {
+    height: 70%;
+
+    overflow: auto;
+}
+
+.cabecalho {
+    background: #6B5E62;
+    border-top-left-radius: 5vh;
+    border-top-right-radius: 5vh;
+    display: flex;
+
+    height: 12vh;
+
+    overflow: hidden;
+}
+
+.icone {
+    background: #D6BBC0;
+    border-radius: 5vh;
+
+    width: 7vh;
+    height: 7vh;
+
+    margin-left: 40px;
+    margin-top: 3vh;
+}
+
+.foto {
+
+    border-radius: 5vh;
+
+    width: 7vh;
+    height: 7vh;
+
+}
+
+.nome {
+    color: #EBDDDF;
+    font-size: 3vh;
+    line-height: 5vh;
+
+    max-width: 30vh;
+    height: 5vh;
+
+    margin-right: 40px;
+    margin-top: 3.8vh;
+
+    padding-left: 2vh;
+
+}
+
+.mensagemAtendente {
+    background: #EBDDDF; 
+    color: #001514;
+    border-radius: 1.5vh;
+    text-align: left;
+    
+    width: 60%;
+
+    margin-left: 25px;
+    margin-top: 10px;
+
+    padding: 10px;
+}
+
+.mensagemUser {
+    background: #9AB87A;
+    color: #001514;
+    border-radius: 1.5vh;
+    text-align: right;
+
+    width: 60%;
+    
+    margin-left: auto;
+    margin-right: 25px;
+    margin-top: 10px;
+
+    padding: 10px;
+}
+
+.rodape {
+    background: #6B5E62;
+    border-bottom-left-radius: 5vh;
+    border-bottom-right-radius: 5vh;
+    display: flex;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 14vh;
+}
+
+.campoMensagem {
+    background: #D6BBC0;
+    border-radius: 1.5vh;
+    line-height: 6.5vh;
+
+    width: 40vh;
+
+    height: 7vh;
+
+    margin-left: 40px;
+    margin-top: 3vh;
+
+    display: inline-block;
+
+    padding-left: 1vh;
+
+    overflow: hidden;
+}
+
+.inputMensagem {
+    background: #D6BBC0;
+    color: #50474A;
+    width: 30vh;
+    border: none;
+}
+
+.inputMensagem:focus {
+    outline:none;
+}
+
+.botaoEnviar {
+    background: #D6BBC0;
+    display: inline-block;
+    border-radius: 5vh;
+
+    width: 7vh;
+    height: 7vh;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    margin-right: 40px;
+    margin-top: 3vh;
+    
+    text-align: center;
+}
+
+
+.inputEnviar {
+    background: transparent;
+    color: transparent;
+    border: none;
+
+    width: 7vh;
+    height: 7vh;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    cursor: pointer;
+}
+
+.imgEnviar {
+    padding-top: 1.15vh;
+    padding-left: 0.6vh;
+    width: 4.8vh;
+}

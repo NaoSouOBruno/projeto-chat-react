@@ -8,7 +8,7 @@ export function Chat() {
     const nome = location.state?.nome;
 
     if (!nome) { // retorna ao index ao tentar acessar pela url
-        return <Navigate to="/" replace />;
+        return <Navigate to="/" replace />; // gambiarra?? talvez.
     }
 
     const [mensagens, setMensagens] = useState([]);
